@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle">
+   <string>Graph Plotter</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <!-- Контейнер для графика -->
+    <item>
+     <widget class="QWidget" name="graphContainer">
+      <property name="minimumSize">
+       <size>
+        <width>400</width>
+        <height>300</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="graphLayout"/>
+     </widget>
+    </item>
+    <!-- Панель ввода снизу -->
+    <item>
+     <layout class="QHBoxLayout" name="inputLayout">
+      <item>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="placeholderText">
+         <string>Введите выражение, например: y = sin(x) или x = y^2</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Построить график</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+
+ <!-- ВАЖНО: <resources/> и <connections/> идут после закрывающего тега <widget> -->
+ <resources/>
+ <connections>
+  <connection sender="pushButton" signal="clicked()" receiver="MainWindow" slot="on_pushButton_clicked()"/>
+ </connections>
+
+ <!-- Если есть custom widgets -->
+ <customwidgets/>
+</ui>
