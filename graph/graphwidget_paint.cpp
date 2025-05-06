@@ -74,7 +74,9 @@ void GraphWidget::drawAxisTicksHelper(QPainter &painter, double start, double en
             painter.drawLine(pt.x(), pt.y() - 5, pt.x(), pt.y() + 5);
         else
             painter.drawLine(pt.x() - 5, pt.y(), pt.x() + 5, pt.y());
-        painter.drawText(pt + QPointF(2, -2), QString::number(pos));
+
+        double labelValue = (std::abs(pos) < 1e-8 ? 0.0 : pos);
+        painter.drawText(pt + QPointF(2, -2), QString::number(labelValue));
     }
 }
 
